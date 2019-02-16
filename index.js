@@ -12,7 +12,7 @@ function getObjectType(value) {
 
 /**
  * @func seal
- * @param {!Object} target
+ * @param {!Object} target target
  * @returns {Object}
  *
  * @throws {TypeError}
@@ -41,7 +41,7 @@ function seal(target) {
             }
 
             const propertyType = getObjectType(propertyValue);
-            const currType = getObjectType(ref[propertyKey])
+            const currType = getObjectType(ref[propertyKey]);
             if (propertyType !== currType) {
                 throw new TypeError(`Unable to cast ${currType} to ${propertyType} for propertyKey ${propertyKey}`);
             }

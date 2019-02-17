@@ -49,3 +49,50 @@ avaTest("seal()", (assert) => {
     }, { instanceOf: Error });
 });
 
+avaTest("freezedProperty() must throw on Freezed Object", (assert) => {
+    const _o = Object.freeze({});
+    assert.throws(() => {
+        Immutable.freezedProperty(_o, "yo");
+    }, { instanceOf: Error, message: "Unable to define propertyKey yo" });
+});
+
+avaTest("freezedProperty() propertyKey must be string or symbol", (assert) => {
+    const _o = {};
+    assert.throws(() => {
+        Immutable.freezedProperty(_o, null);
+    }, { instanceOf: TypeError, message: "propertyKey must be a symbol or a string" });
+});
+
+avaTest("freezedProperty() must be ok with Symbol", (assert) => {
+    const _o = {};
+    const sym = Symbol("foo");
+    Immutable.freezedProperty(_o, sym, "bar");
+    assert.is(_o[sym], "bar");
+});
+
+avaTest("freezedProperty() is non-enumerable", (assert) => {
+    const _o = {};
+    const ret = Immutable.freezedProperty(_o, "yo");
+    assert.is(ret, void 0);
+    assert.deepEqual(Object.keys(_o), []);
+    assert.deepEqual(Reflect.ownKeys(_o), ["yo"]);
+});
+
+avaTest("freezedProperty() is non-configurable/non-writable", (assert) => {
+    const _o = {};
+    Immutable.freezedProperty(_o, "yo");
+    const ret = Immutable.freezedProperty(_o, "foo", "bar");
+    assert.is(ret, void 0);
+    assert.is(_o.yo, null);
+    assert.is(_o.foo, "bar");
+
+    assert.deepEqual(Reflect.ownKeys(_o), ["yo", "foo"]);
+    assert.throws(() => {
+        delete _o.yo;
+    }, { instanceOf: TypeError });
+
+    assert.throws(() => {
+        _o.yo = 10;
+    }, { instanceOf: TypeError });
+    assert.is(_o.yo, null);
+});

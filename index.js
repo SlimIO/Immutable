@@ -77,7 +77,7 @@ function freezedProperty(target, propertyKey, value = null) {
     });
 
     if (!ok) {
-        throw new Error(`Unable to define propertyKey ${propertyKey} on target ${getObjectType(target)}`);
+        throw new Error(`Unable to define propertyKey ${propertyKey}`);
     }
 }
 

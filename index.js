@@ -46,7 +46,9 @@ function seal(target) {
                 throw new TypeError(`Unable to cast ${currType} to ${propertyType} for propertyKey ${propertyKey}`);
             }
 
-            ref[propertyKey] = propertyValue;
+            Reflect.set(ref, propertyKey, propertyValue);
+
+            return true;
         }
     });
 }

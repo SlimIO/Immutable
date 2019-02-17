@@ -25,9 +25,16 @@ avaTest("seal(Readonly<{}>) must throw an Error", (assert) => {
 
 avaTest("seal()", (assert) => {
     const obj = Immutable.seal({ foo: "bar" });
+    const obj2 = Immutable.seal(Object.seal({ hello: "world" }));
+    assert.is(obj.foo, "bar");
+    assert.is(obj2.hello, "world");
 
     assert.throws(() => {
         console.log(obj.world);
+    }, { instanceOf: Error });
+
+    assert.throws(() => {
+        obj.world = 10;
     }, { instanceOf: Error });
 
     assert.throws(() => {
@@ -41,3 +48,4 @@ avaTest("seal()", (assert) => {
         obj.foo = 10;
     }, { instanceOf: Error });
 });
+

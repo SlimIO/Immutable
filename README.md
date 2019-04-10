@@ -5,7 +5,10 @@
 
 Immutable Objects properties.
 
-> ⚠️ this project is experimental
+> ⚠️ Experimental Project (Please do not use in production)
+
+## Requirements
+- Node.js v10 or higher
 
 ## Getting Started
 
@@ -16,6 +19,9 @@ $ npm i @slimio/immutable
 # or
 $ yarn add @slimio/immutable
 ```
+
+## Usage example
+TBC
 
 ## API
 

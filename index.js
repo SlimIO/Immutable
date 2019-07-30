@@ -1,19 +1,21 @@
+"use strict";
+
 // Require Third-party Dependencies
 const is = require("@slimio/is");
 
 /**
- * @func getObjectType
+ * @function getObjectType
  * @param {any} value any javascript value
- * @returns {String}
+ * @returns {string}
  */
 function getObjectType(value) {
     return Object.prototype.toString.call(value).slice(8, -1);
 }
 
 /**
- * @func seal
- * @param {!Object} target target
- * @returns {Object}
+ * @function seal
+ * @param {!object} target target
+ * @returns {object}
  *
  * @throws {TypeError}
  */
@@ -54,10 +56,10 @@ function seal(target) {
 }
 
 /**
- * @func freezedProperty
- * @desc Define a private (non-enumable, non-configurable) property on the target
- * @param {!Object} target target object
- * @param {!String | Symbol} propertyKey The name of the property we want to define in target
+ * @function freezedProperty
+ * @description Define a private (non-enumable, non-configurable) property on the target
+ * @param {!object} target target object
+ * @param {!string | symbol} propertyKey The name of the property we want to define in target
  * @param {*} [value=null] The property value
  * @returns {void}
  *

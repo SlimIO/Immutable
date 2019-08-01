@@ -21,6 +21,17 @@
         "proxy",
         "static"
     ],
+    "files": [
+        "index.js",
+        "index.d.ts",
+        ".editorconfig",
+        ".eslintrc",
+        "slimio.toml",
+        "CONTRIBUTING.md",
+        "commitlint.config.js",
+        "src",
+        "test"
+    ],
     "author": "SlimIO",
     "license": "MIT",
     "bugs": {

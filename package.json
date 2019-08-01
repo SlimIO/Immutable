@@ -29,6 +29,7 @@
         "slimio.toml",
         "CONTRIBUTING.md",
         "commitlint.config.js",
+        "jsdoc.json",
         "src",
         "test"
     ],
@@ -59,7 +60,7 @@
     },
     "husky": {
         "hooks": {
-            "pre-push": "cross-env npm test",
+            "pre-push": "cross-env eslint index.js npm test",
             "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
         }
     },

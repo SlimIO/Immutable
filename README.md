@@ -8,7 +8,7 @@
 [![Known Vulnerabilities](https://snyk.io//test/github/SlimIO/Immutable/badge.svg?targetFile=package.json)](https://snyk.io//test/github/SlimIO/Immutable?targetFile=package.json)
 [![Build Status](https://travis-ci.com/SlimIO/Immutable.svg?branch=master)](https://travis-ci.com/SlimIO/Immutable)
 
-Immutable Objects properties.
+Group of useful functions that allow to create and manage Immutable and sealed properties and objects.
 
 > ⚠️ Experimental Project (Please do not use in production)
 
@@ -26,7 +26,25 @@ $ yarn add @slimio/immutable
 ```
 
 ## Usage example
-TBC
+```js
+const { freezedProperty, seal } = require("@slimio/immutable");
+
+class User {
+    constructor(name, age) {
+        // Produce readyonly properties
+        freezedProperty(this, "name", name);
+        freezedProperty(this, "age", age);
+    }
+}
+User.properties = seal({
+    name: "param as a string"
+});
+Object.preventExtensions(User);
+
+const obj = new User("fraxken", 16);
+console.log(obj.name);
+console.log(obj.age);
+```
 
 ## API
 

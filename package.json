@@ -23,15 +23,7 @@
     ],
     "files": [
         "index.js",
-        "index.d.ts",
-        ".editorconfig",
-        ".eslintrc",
-        "slimio.toml",
-        "CONTRIBUTING.md",
-        "commitlint.config.js",
-        "jsdoc.json",
-        "src",
-        "test"
+        "index.d.ts"
     ],
     "author": "SlimIO",
     "license": "MIT",

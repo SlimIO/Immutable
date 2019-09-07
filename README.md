@@ -6,7 +6,7 @@
 ![dep](https://img.shields.io/david/SlimIO/Immutable)
 ![size](https://img.shields.io/github/languages/code-size/SlimIO/Immutable)
 [![Known Vulnerabilities](https://snyk.io//test/github/SlimIO/Immutable/badge.svg?targetFile=package.json)](https://snyk.io//test/github/SlimIO/Immutable?targetFile=package.json)
-[![Build Status](https://travis-ci.com/SlimIO/Immutable.svg?branch=master)](https://travis-ci.com/SlimIO/Immutable)
+[![Build Status](https://travis-ci.com/SlimIO/Immutable.svg?branch=master)](https://travis-ci.com/SlimIO/Immutable) [![Greenkeeper badge](https://badges.greenkeeper.io/SlimIO/Immutable.svg)](https://greenkeeper.io/)
 
 Group of useful functions that allow to create and manage Immutable and sealed properties and objects.
 

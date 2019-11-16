@@ -13,7 +13,7 @@ Group of useful functions that allow to create and manage Immutable and sealed p
 > ⚠️ Experimental Project (Please do not use in production)
 
 ## Requirements
-- [Node.js](https://nodejs.org/en/) v10 or higher
+- [Node.js](https://nodejs.org/en/) v12 or higher
 
 ## Getting Started
 
